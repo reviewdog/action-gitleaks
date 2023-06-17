@@ -1,6 +1,6 @@
-name: 'TODO: Run <linter-name> with reviewdog'
-description: 'TODO: 🐶 Run <linter-name> with reviewdog on pull requests to improve code review experience.'
-author: 'TODO: <your-name>'
+name: 'Run gitleaks with reviewdog'
+description: '🐶 Run gitleaks with reviewdog on pull requests to improve code review experience.'
+author: 'tvcsantos'
 inputs:
   github_token:
     description: 'GITHUB_TOKEN'
@@ -28,16 +28,15 @@ inputs:
   reviewdog_flags:
     description: 'Additional reviewdog flags'
     default: ''
-  ### Flags for <linter-name> ###
-  locale:
-    description: '-locale flag of misspell. (US/UK)'
+  ### Flags for gitleaks ###
+  gitleaks_flags:
+    description: "flags and args of gitleaks command. Default: ''"
     default: ''
 runs:
   using: 'docker'
   image: 'Dockerfile'
 
 # Ref: https://haya14busa.github.io/github-action-brandings/
-# TODO: update branding if you want.
 branding:
-  icon: 'check'
+  icon: 'shield'
   color: 'blue'
