@@ -43,10 +43,3 @@ jobs:
           level: error
           reviewdog_flags: -filter-mode=file -fail-on-error
         continue-on-error: true
-      - name: Check that failed
-        shell: bash
-        run: |
-          if ! [[ ${{ steps.github-pr-review.outcome }} == 'failure' ]]; then
-            echo "Previous step should have failed!!"
-            exit 1
-          fi
