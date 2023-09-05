@@ -9,7 +9,7 @@ jobs:
     name: runner / gitleaks (github-check)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: ./
         with:
           github_token: ${{ secrets.github_token }}
@@ -21,7 +21,7 @@ jobs:
     name: runner / gitleaks (github-pr-check)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: ./
         with:
           github_token: ${{ secrets.github_token }}
@@ -34,7 +34,7 @@ jobs:
     name: runner / gitleaks (github-pr-review)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: ./
         id: github-pr-review
         with:
