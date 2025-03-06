@@ -13,7 +13,12 @@ RUN wget -O - -q https://raw.githubusercontent.com/reviewdog/reviewdog/master/in
 
 RUN mkdir -p /opt/gitleaks
 
-RUN wget -O - -q "https://github.com/gitleaks/gitleaks/releases/download/v${GITLEAKS_VERSION}/gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz" \
+RUN if [ "$(uname -m)" = "aarch64" ]; then \
+      DIST="linux_arm64"; \
+    else \
+      DIST="linux_x64"; \
+    fi && \
+    wget -O - -q "https://github.com/gitleaks/gitleaks/releases/download/v${GITLEAKS_VERSION}/gitleaks_${GITLEAKS_VERSION}_${DIST}.tar.gz" \
     | tar -xvz -C /opt/gitleaks
 
 RUN ln -s /opt/gitleaks/gitleaks /usr/local/bin/gitleaks
