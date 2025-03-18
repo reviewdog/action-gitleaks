@@ -68,8 +68,8 @@ jobs:
     name: runner / gitleaks
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: reviewdog/action-gitleaks@v1
+      - uses: actions/checkout@ee0669bd1cc54295c223e0bb666b733df41de1c5 # v2.7.0
+      - uses: reviewdog/action-gitleaks@1458857b76107d28d5ebab788230c0d0e23f76ad # v1.7.2
         with:
           github_token: ${{ secrets.github_token }}
           # Change reviewdog reporter if you need [github-pr-check,github-check,github-pr-review].
