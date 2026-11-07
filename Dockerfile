@@ -1,6 +1,6 @@
 FROM alpine:3.20
 
-ENV REVIEWDOG_VERSION=v0.21.0
+ENV REVIEWDOG_VERSION=v0.21.3
 ENV GITLEAKS_VERSION=8.18.0
 
 SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
